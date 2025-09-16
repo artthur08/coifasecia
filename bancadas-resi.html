@@ -1,0 +1,148 @@
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bancadas Residenciais - Coifas & Cia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="css/products.css">
+
+<link rel="icon" href="img/icon-coifas.png" type="image/x-icon">
+
+</head>
+<body>
+
+    <div class="whatsapp-widget">
+      <a href="https://wa.me/554384928472?text=Olá!%20Gostaria%20de%20mais%20informações."
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="whatsapp-float">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
+      <div id="whatsapp-message" class="whatsapp-message">Precisa de ajuda?</div>
+    </div>
+
+    <header>
+        <div>
+            <img src="img/logo-coifas.png" alt="Logo" onclick="window.location.href='index.html'"  style="cursor: pointer;">
+        </div>
+    <nav>
+      <!-- Botão hambúrguer -->
+    <button class="menu-toggle" aria-label="Abrir menu">
+      ☰
+    </button>
+        <a href="index.html">INÍCIO</a>
+
+        <a href="sobre.html">A EMPRESA</a>
+
+      <!-- Produtos com submenu -->
+    <div class="dropdown">
+        <a href="#" class="dropdown-toggle">PRODUTOS</a>
+        <div class="dropdown-menu">
+            <a href="coifas-resi.html">Coifas Residenciais</a>
+            <a href="coifas-indus.html">Coifas Industriais</a>
+            <a href="coifas-lavo.html">Coifa Lavadora de Gases</a>
+            <a href="bancadas-indus.html">Bancadas Industriais</a>
+            <a href="bancadas-resi.html">Bancadas Residenciais</a>
+            <a href="mesa-ope.html">Mesa Operacional</a>
+        </div>
+    </div>
+        <a href="contato.html">CONTATO</a>
+    </nav>
+        
+    </header>
+
+    <section class="hero b-resi">
+        <h1>Bancadas Residenciais</h1>
+        <p>As bancadas residenciais em inox unem praticidade, resistência e facilidade na limpeza, tornando o dia a dia na cozinha mais organizado e seguro.</p>
+    </section>
+    <section class="models hidden">
+        <h2>Alguns modelos</h2>
+        <div class="models-grid">
+            <div class="model"><img src="img/banca-resi-1.webp" alt=""></div>
+            <div class="model"><img src="img/banca-resi-2.png" alt=""></div>
+            <div class="model"><img src="img/banca-resi-3.webp" alt=""></div>
+            <div class="model"></div>
+        </div>
+    </section>
+
+    <!-- VALORES - BANCADAS RESIDENCIAIS EM INOX -->
+<section class="valores hidden">
+  <div class="container">
+    <h2>Nossos Valores</h2>
+    <div class="grid-valores">
+      <div class="valor">
+        <i data-lucide="gem"></i>
+        <h3>Elegância</h3>
+        <p>Design moderno em inox que valoriza a estética da sua cozinha.</p>
+      </div>
+      <div class="valor">
+        <i data-lucide="utensils"></i>
+        <h3>Praticidade</h3>
+        <p>Superfícies versáteis e fáceis de higienizar no dia a dia.</p>
+      </div>
+      <div class="valor">
+        <i data-lucide="clock"></i>
+        <h3>Durabilidade</h3>
+        <p>Bancadas resistentes ao tempo, mantendo qualidade e beleza por anos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="ficha-tecnica hidden">
+        <h2>Ficha técnica</h2>
+        <div class="content">
+            <p>Uma mesa ou bancada inox é fundamental no preparo dos alimentos, 
+              e como apoio para as máquinas na sua cozinha. São as mais indicadas 
+              para o trabalho do dia a dia, muito resistentes e duráveis, não enferrujam 
+              e não permitem a proliferação de bactérias. Sua limpeza é fácil e seu aspecto 
+              moderno, convidando os clientes a entrar na cozinha, e passando confiança e segurança.
+            </p>
+            <p>Nesses ambientes de produção e serviço de comida, o inox facilita o cumprimento da 
+              legislação sanitária, pois não libera nenhum resíduo quando em contato com os alimentos, 
+              o que favorece a saudabilidade e a manutenção dos sabores.
+            </p>
+            <p>Além disso, a mesa inox conferem beleza e credibilidade a qualquer estabelecimento. 
+              O inox por ser um material com pouca porosidade é o melhor opção para se lidar com 
+              alimentos, permitindo uma higienização efetiva.
+            </p>
+            <p>
+              As principais vantagens da mesa de aço inox são sua durabilidade e a facilidade de 
+              limpeza. Podem ser usados produtos de limpeza facilmente encontrados em qualquer 
+              supermercado. Além da água, os detergentes neutros, o sabão e os removedores à base 
+              de amônio diluído em água morna, são utilizados.
+            </p>
+        </div>
+    </section>
+  <!-- FOOTER -->
+  <footer class="footer hidden">
+    <div class="footer-container">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="img/logo-coifas.png" alt="Coifas & Cia" />
+      </div>
+
+      <!-- Linha separadora -->
+      <div class="footer-line"></div>
+
+      
+    </div>
+  </footer>
+
+  <script src="js/efectScroll.js"></script>
+  <script src="js/dropdown.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/buttonWhats.js"></script>
+
+  <!-- Script do Lucide -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

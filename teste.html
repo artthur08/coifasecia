@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Botão WhatsApp com mensagens -->
+<div class="whatsapp-widget">
+  <a href="https://wa.me/554384928472?text=Olá!%20Gostaria%20de%20mais%20informações."
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="whatsapp-float">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+  <div id="whatsapp-message" class="whatsapp-message">Precisa de ajuda?</div>
+</div>
+
+<style>
+.whatsapp-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.whatsapp-float {
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float img {
+  width: 35px;
+}
+
+.whatsapp-message {
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+const messages = [
+  "Precisa de ajuda?",
+  "Quer conhecer mais sobre a solução para seu negócio?",
+  "Precisa de mais informações? 🙂"
+];
+
+let index = 0;
+const messageElement = document.getElementById("whatsapp-message");
+
+setInterval(() => {
+  index = (index + 1) % messages.length;
+  messageElement.textContent = messages[index];
+}, 4000); // troca a cada 4 segundos
+</script>
+
+</body>
+</html>

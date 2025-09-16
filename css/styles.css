@@ -1,0 +1,606 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Albert Sans', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    /* Estado inicial escondido */
+    .hidden {
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(8px);
+      transition: all 0.8s ease-out;
+    }
+
+    /* Quando aparecer */
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    header {
+      margin: 10px;
+      background: #111;
+      border-radius: 10px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    
+    header img {
+      display: flex;
+      align-items: center;
+      width: 120px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    header nav {
+      display: flex;
+      align-items: center;
+    }
+
+    header nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.8rem;
+      position: relative;
+    }
+
+    header nav a:hover {
+      color: #3F5644;
+    }
+
+    /* Estilo do dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #222;
+      border-radius: 6px;
+      display: none;
+      flex-direction: column;
+      min-width: 180px;
+      padding: 0.5rem 0;
+      z-index: 1000;
+    }
+
+    .dropdown-menu a {
+      padding: 0.5rem 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      display: block;
+    }
+
+    .dropdown-menu a:hover {
+      color: #3F5644;
+    }
+
+    /* Mostrar no hover (desktop) */
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    /* Mostrar via JS (mobile) */
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    .btn-header {
+      background: #3F5644;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+        .btn-header:hover {
+      background: #fff;
+      color: #3F5644;
+    }
+
+.whatsapp-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.whatsapp-float {
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float img {
+  width: 35px;
+}
+
+.whatsapp-message {
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+    .hero {
+      /* margin: 10px;
+      border-radius: 10px;
+      background-image: url("../img/banner-principal.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 19rem 2rem;
+      text-align: left; */
+      position: relative;
+      margin: 10px;
+      z-index: -1;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 840px; /* altura do banner */
+    }
+
+    .hero .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 19rem 2rem;
+      text-align: left;
+      background-image: var(--bg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      pointer-events: none; /* não permite interação */
+    }
+
+    .hero .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #FFFFFFFF;
+      font-weight: 700;
+    }
+
+    .hero p {
+      margin: 1rem 0;
+      color: #b1b1b1;
+    }
+
+    .hero p a {
+  display: inline-block;
+}
+
+
+.btn {
+  display: inline-block !important; /* garante inline */
+  width: auto !important;           /* impede largura total */
+  max-width: fit-content;           /* só ocupa o necessário */
+  background: #3F5644;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: white;
+  color: #3F5644;
+}
+
+
+.section {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas menores */
+  align-items: center; /* Centraliza os itens verticalmente */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  padding: 5rem 3rem; /* Aumentei o espaçamento para um visual mais limpo */
+  gap: 4rem; /* Aumentei o espaço entre a imagem e o texto */
+  max-width: 1200px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza a seção na página */
+}
+
+/* Inverte a ordem para as seções pares (efeito zigue-zague) */
+.section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.img-link {
+  flex: 1 1 400px;
+  display: block; /* garante que ocupe o mesmo espaço da div */
+  text-decoration: none; /* remove sublinhado */
+}
+
+.img-link .indu {
+  width: 100%;
+  height: 100%;
+}
+
+.img-link .resi {
+  width: 100%;
+  height: 100%;
+}
+
+.img-link .c-lavo {
+  width: 100%;
+  height: 100%;
+}
+
+.img-link .b-indu {
+  width: 100%;
+  height: 100%;
+}
+
+.img-link .b-indu {
+  width: 100%;
+  height: 100%;
+}
+
+.img-link .ope {
+  width: 100%;
+  height: 100%;
+}
+
+/* Estilo para a área da imagem */
+.section .indu {
+  flex: 1 1 400px; /* Define a base de tamanho e permite que cresça/diminua */
+  background-image: url("../img/coifa-indu-3.png"); /* Um cinza claro para o placeholder, como na referência */
+  background-size: cover; /* para ocupar todo o espaço */
+  background-position: center; /* centraliza */
+  background-repeat: no-repeat; /* não repete */
+  height: 500px;
+  border: 10px solid #3F5644; /* cinza claro */
+  border-radius: 12px; /* borda arredondada */
+  padding: 5px; /* espaço entre a borda e a imagem */
+}
+
+/* Estilo para a área da imagem */
+.section .resi {
+  flex: 1 1 400px; /* Define a base de tamanho e permite que cresça/diminua */
+  background-image: url("../img/IMG-20250904-WA0060.jpg"); /* Um cinza claro para o placeholder, como na referência */
+  background-size: cover; /* para ocupar todo o espaço */
+  background-position: center; /* centraliza */
+  background-repeat: no-repeat; /* não repete */
+  height: 500px;
+  border: 10px solid #3F5644; /* cinza claro */
+  border-radius: 12px; /* borda arredondada */
+  padding: 5px; /* espaço entre a borda e a imagem */
+}
+
+/* Estilo para a área da imagem */
+.section .b-resi {
+  flex: 1 1 400px; /* Define a base de tamanho e permite que cresça/diminua */
+  background-image: url("../img/banca-resi-2.png"); /* Um cinza claro para o placeholder, como na referência */
+  background-size: cover; /* para ocupar todo o espaço */
+  background-position: center; /* centraliza */
+  background-repeat: no-repeat; /* não repete */
+  height: 500px;
+  border: 10px solid #3F5644; /* cinza claro */
+  border-radius: 12px; /* borda arredondada */
+  padding: 5px; /* espaço entre a borda e a imagem */
+}
+
+/* Estilo para a área da imagem */
+.section .ope {
+  flex: 1 1 400px; /* Define a base de tamanho e permite que cresça/diminua */
+  background-image: url("../img/mesa-1.webp"); /* Um cinza claro para o placeholder, como na referência */
+  background-size: cover; /* para ocupar todo o espaço */
+  background-position: center; /* centraliza */
+  background-repeat: no-repeat; /* não repete */
+  height: 500px;
+  border: 10px solid #3F5644; /* cinza claro */
+  border-radius: 12px; /* borda arredondada */
+  padding: 5px; /* espaço entre a borda e a imagem */
+}
+
+/* Estilo para a área da imagem */
+.section .b-indu {
+  flex: 1 1 400px; /* Define a base de tamanho e permite que cresça/diminua */
+  background-image: url("../img/banca-indu-1.png"); /* Um cinza claro para o placeholder, como na referência */
+  background-size: cover; /* para ocupar todo o espaço */
+  background-position: center; /* centraliza */
+  background-repeat: no-repeat; /* não repete */
+  height: 500px;
+  border: 10px solid #3F5644; /* cinza claro */
+  border-radius: 12px; /* borda arredondada */
+  padding: 5px; /* espaço entre a borda e a imagem */
+  
+}
+
+.section .c-lavo {
+  flex: 1 1 400px; /* Define a base de tamanho e permite que cresça/diminua */
+  background-image: url("../img/lavadora-1.png"); /* Um cinza claro para o placeholder, como na referência */
+  background-size: cover; /* para ocupar todo o espaço */
+  background-position: center; /* centraliza */
+  background-repeat: no-repeat; /* não repete */
+  height: 500px;
+  border: 10px solid #3F5644; /* cinza claro */
+  border-radius: 12px; /* borda arredondada */
+  padding: 5px; /* espaço entre a borda e a imagem */
+}
+
+/* Estilo para a área do texto */
+.section .text {
+  flex: 1 1 400px; /* Define a base de tamanho e permite que cresça/diminua */
+  max-width: 500px; /* Evita que o texto fique largo demais */
+}
+
+/* Estilo para o título h2 */
+.section .text h2 {
+  font-size: 2.1rem; /* Tamanho de fonte forte, mas elegante */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #3F5644; /* Título em preto para maior destaque */
+}
+
+/* Estilo para o parágrafo */
+.section .text p {
+  font-size: 1.3rem;
+  line-height: 1.7; /* Melhora a legibilidade */
+  color: #000; /* Um cinza escuro para o texto do parágrafo */
+}
+
+  .clientes {
+    padding: 50px 0;
+    background: #f9f9f9;
+    text-align: center;
+  }
+
+  .clientes h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 180px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+
+  .slide img:hover {
+    filter: grayscale(0%);
+  }
+
+  @keyframes scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 768px) {
+    .slide {
+      min-width: 120px;
+      margin: 0 10px;
+    }
+
+    .slide img {
+      max-width: 100px;
+    }
+  }
+
+/* FOOTER */
+.footer {
+  margin: 10px;
+  background-color: #1e1a1a; /* cor de fundo escuro */
+  padding: 80px;
+  border-radius: 20px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Logo */
+.footer-logo img {
+  width: 110px;
+}
+
+/* Linha separadora */
+.footer-line {
+  flex: 1;
+  height: 1px;
+  background-color: #3F5644;
+  margin: 0 20px;
+  min-width: 100px;
+}
+
+/* Botão */
+.btn-orcamento {
+  background-color: #3F5644;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.btn-orcamento:hover {
+  background-color: #fff;
+  color:#3f5644;
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  background: #e5e5e5;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.footer-social a i {
+  font-size: 18px;
+  color: #3F5644;
+  transition: 0.3s;
+}
+
+.footer-social a:hover i {
+  color: #fff;
+}
+
+
+.footer-social a:hover {
+  background: #3F5644;
+}
+
+.footer-social img {
+  width: 18px;
+  height: 18px;
+  filter: invert(30%) sepia(20%) saturate(500%) hue-rotate(20deg);
+}
+
+/* -------------------------------
+   RESPONSIVIDADE
+--------------------------------*/
+@media (max-width: 768px) {
+  /* Botão menu visível apenas no mobile */
+.menu-toggle {
+  display: block;
+  align-items: center; /* deixa o botão no canto direito */
+}
+
+    header img {
+      width: 30%;
+    }
+
+/* Esconde o nav e o botão orçamento inicialmente */
+header nav {
+  display: none;
+  flex-direction: column;
+  align-items: center; /* centraliza os links */
+  width: 100%;
+  margin-top: 1rem;
+  background: #111;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+header nav a {
+  margin: 0.7rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Esconde o botão de orçamento quando o menu está fechado */
+header .btn-orcamento {
+  display: none;
+}
+
+/* Quando o menu abre */
+header nav.show {
+  display: flex;
+}
+
+header nav.show + .btn-orcamento {
+  display: block;
+  margin: 1rem auto 0;
+  text-align: center;
+}
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-line {
+    display: none; /* escondemos a linha em telas menores */
+  }
+
+  .footer-btn {
+    margin: 10px 0;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}  
